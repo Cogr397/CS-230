@@ -1,0 +1,29 @@
+#header {
+	background-color:#66CCFF;
+	text-align: center;
+}
+#about {
+	text-align: center;
+	background-color:#FF66CC;
+
+}
+#who {
+	text-align: center;
+	background-color: #000000;
+	color: white;
+
+}
+#Fry {
+	background-color: #666666;
+	font-family: "Times New Roman";
+}
+#unknown{
+	
+}
+#twin{
+	background-color: #666666;
+	text-decoration: overline;
+}
+#Alex{
+	text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+.bg-cover {
+	background-image: url("../Images/Gaban.jpg");
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+
+.center-me {
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+	background-color: #303030;
+}
+
+.form-signin{
+	padding: 20px;
+	padding-left: 10px;
+	text-align: center;
+}
+
+input{
+	margin: 10px;
+	text-align: center;
+	justify-content: center;
+}
