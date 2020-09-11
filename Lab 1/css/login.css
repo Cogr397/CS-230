@@ -1,9 +1,8 @@
 .bg-cover {
-	background-image: url("../Images/Gaban.jpg");
-	height: 100vh;
+	background-image: url("../Images/metro1.jpg");
 	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 	
 }
 
@@ -12,6 +11,10 @@
 	justify-content: center;
 	padding: 40px;
 	background-color: #303030;
+	background-image: url("../Images/Gaban.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .form-signin{
