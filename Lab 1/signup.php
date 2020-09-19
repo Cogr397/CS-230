@@ -33,7 +33,7 @@ require "includes/header.php"
                              <input type="password" class="form-control" name="con-pwd" placeholder="Confirm Password" required="required">
                         </div>
                         <div class="form-group">
-                             <button type="submit" name="singup-submit" class="btn btn-outline-secondary btn-lg btn-block">Register</button> 
+                             <button type="submit" name="signup-submit" class="btn btn-outline-secondary btn-lg btn-block">Register</button> 
                         </div>
                     </form>
                     <div class="text-center">Already a member? <a href="login.html">Sign in</a></div>
