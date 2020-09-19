@@ -128,3 +128,9 @@
 [0910/205018.366:ERROR:crash_report_database_win.cc(447)] failed to read records
 [0910/205132.875:ERROR:file_io.cc(90)] ReadExactly: expected 448, observed 0
 [0910/205132.877:ERROR:crash_report_database_win.cc(447)] failed to read records
+[0911/083011.403:ERROR:file_io.cc(90)] ReadExactly: expected 448, observed 0
+[0911/083011.404:ERROR:crash_report_database_win.cc(447)] failed to read records
+[0911/083017.950:ERROR:file_io.cc(90)] ReadExactly: expected 448, observed 0
+[0911/083017.952:ERROR:crash_report_database_win.cc(447)] failed to read records
+[0917/184442.415:ERROR:file_io.cc(90)] ReadExactly: expected 448, observed 0
+[0917/184442.415:ERROR:crash_report_database_win.cc(447)] failed to read records
