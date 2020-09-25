@@ -1,12 +1,12 @@
 <?php 
-require 'includes/header.php'
+require 'includes/header.php';
 ?>
 
 <main>
 
 <?php
 if(isset($_SESSION['uid'])){
-    include 'html/profil.html';
+    include 'html/profile.html';
 
 }
 else{

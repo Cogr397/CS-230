@@ -2,8 +2,8 @@
 
 if(isset($_POST['login-submit'])){
     require 'dbhandler.php';
-    $uname_email = $_HOST['uname'];
-    $passw = $_HOST['pwd'];
+    $uname_email = $_POST['uname'];
+    $passw = $_POST['pwd'];
 
     if(empty($uname_email) || empty($passw)){
         header("Location: ../login.php?error=EmptyField");
@@ -31,9 +31,9 @@ if(isset($_POST['login-submit'])){
             
             if($pass_check == true){
                 session_start();
-                $_session['uid'] = $data['uid'];
-                $_session['fname'] = $data['fname'];
-                $_session['uname'] = $data['uname'];
+                $_SESSION['uid'] = $data['uid'];
+                $_SESSION['fname'] = $data['fname'];
+                $_SESSION['uname'] = $data['uname'];
 
                 header("Location: ../profile.php?error=Success");
                 exit();
