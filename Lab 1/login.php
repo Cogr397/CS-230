@@ -26,7 +26,7 @@ require 'includes/header.php'
                             <input type="password" id="inputPassword" name="pwd" class="form-control" placeholder="Password" required>
                             <div class="checkbox mb-3">
                                 <label>
-                                    <input type="checkbox" value="remember-me"> Remember me
+                                    <input type="checkbox" value="remember-me">Remember me</input>
                                 </label>
                             </div>
                             <button class="btn btn-lg btn-dark btn-block"  name="login-submit" type="submit">Sign in</button>
