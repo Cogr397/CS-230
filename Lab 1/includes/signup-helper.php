@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['signup-submit'])){
+if (isset($_POST['signup-submit'])) {
     require 'dbhandler.php';
 
     $username = $_POST['uname'];
@@ -10,55 +10,56 @@ if(isset($_POST['signup-submit'])){
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
 
-    if($passw !== $pass_rep){
-        header("Location: ../signup.php?error=diffPassword&fname=".$fname." &lname=" .$lname." &uname= ".$username);
+    if ($passw !== $pass_rep) {
+        header("Location: ../signup.php?error=diffPasswords&fname=".$fname."&lname=".$lname."&uname=".$username);
         exit();
     }
-    else{
+    else {
         $sql = "SELECT uname FROM users WHERE uname=?";
         $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt, $sql)){
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../signup.php?error=SQLInjection");
             exit();
         }
-        else{
-            mysqli_stmt_bind_param($stmt, "s", $username);
+        else {
+            mysqli_stmt_bind_param($stmt,"s",$username);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $check = mysqli_stmt_num_rows($stmt);
 
-            if($check > 0){
+            if ($check > 0) {
                 header("Location: ../signup.php?error=UsernameTaken");
                 exit();
             }
 
-            else{
-                $sql ="INSERT INTO users (lname, fname, email, uname, password) VALUES (?, ?, ?, ?, ?)";
+            else {
+                $sql = "INSERT INTO users (lname, fname, email, uname, password) VALUES (?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
-                if(!mysqli_stmt_prepare($stmt, $sql)){
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../signup.php?error=SQLInjection");
                     exit();
                 }
-                else{
+                else {
                     $hashedPass = password_hash($passw, PASSWORD_BCRYPT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $lname, $fname, $email, $username, $hashedPass);
+                    mysqli_stmt_bind_param($stmt,"sssss",$lname, $fname, $email, $username, $hashedPass);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
 
-                    $sqlIMg="INSERT INTO profile (uname) VALUES ('$username')";
+                    $sqlImg = "INSERT INTO profile (uname) VALUES ('$username')";
                     mysqli_query($conn, $sqlImg);
 
                     header("Location: ../signup.php?signup=success");
                     exit();
+                    
                 }
             }
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
     }
-
+    
 }
-else{
+else {
     header("Location: ../signup.php");
     exit();
 }

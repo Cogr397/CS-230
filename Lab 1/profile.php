@@ -1,20 +1,19 @@
 <?php 
 require 'includes/header.php';
-require 'includes/dbhandler.php'
+require 'includes/dbhandler.php';
 ?>
 
 <main>
 
-<?php
-if(isset($_SESSION['uid'])){
-    $prof_user = $_SESSION['uname'];
-    $sqlpro = "SELECT * FROM profile WHERE uname = '$prof_user';";
+<?php 
+if (isset($_SESSION['uid'])) {
+    $prof_user = $_SESSION['username'];
+    $sqlpro = "SELECT * FROM profile WHERE uname='$prof_user';";
 
     $res = mysqli_query($conn, $sqlpro);
     $row = mysqli_fetch_array($res);
     $photo = $row['picpath'];
 ?>
-
 <style>
     .center-me {
         display: flex;
@@ -57,32 +56,30 @@ if(isset($_SESSION['uid'])){
     </script>
 
 <div class="h-100 center-me text-center">
-    <div class = "my-auto">
-      <form action="includes/upload-helper.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <img src="<?php echo $photo; ?>" onclick="triggered();" id="prof-display">
-            <label for="prof-image" id="uname-style"><?php echo $prof_user; ?></label>
-            <input type="file" name="prof-image" id="prof-image" onchange="preview(this)" class="form-control" style="display: none;">
-        </div>
-        <div class="form-group">
-            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="bio..." style="text-align: center"></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" name="prof-submit" class="btn btn-outline-success btn-lg btn-block">Upload</button>
-        </div>
-    </form>
+    <div class="my-auto">
+        <form action="includes/upload-helper.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <img src="uploads/anon.png" onclick="triggered();" id="prof-display">
+                <label for="prof-image" id="uname-style"><?php echo $prof_user;?></label>
+                <input type="file" name="prof-image" id="prof-image" onchange="preview(this)" class="form-control" style="display: none;">
+            </div>
+            <div class="form-group">
+                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="bio..." style="text-align: center;"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="prof-submit" class="btn btn-outline-success btn-lg btn-block">upload</button>
+            </div>
+        </form>
     </div>
-
 </div>
 
 
-<?php
-}
-else{
+<?php 
+}else{
     header("Location: login.php");
     exit();
 }
 
 ?>
-         
+     
 </main>

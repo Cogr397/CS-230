@@ -1,43 +1,26 @@
-#header {
-	background-color:#66CCFF;
-	text-align: center;
+body {
+    font-family: 'Consolas';
+    text-align: center;
 }
-#about {
-	text-align: center;
-	background-color:#FF66CC;
+p {
+    color: black;
+}
 
+.about {
+    background: #b3b3ff;
+    padding: 8px;
 }
-.navbar{
-	background-color: gray;
-	overflow: hidden;
+img {
+    height: 100px;
+    width: 100px;
 }
-.navbar a{
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
+.column {
+    float: left;
+    margin-right: 16px;
+    margin: 10px;
+    width: 22%;
 }
-.navbar a:hover{
-	background-color: white;
-	padding: 3px;
-}
-#who {
-	text-align: center;
-	background-color: #000000;
-	color: white;
-
-}
-#Fry {
-	background-color: #666666;
-	font-family: "Times New Roman";
-}
-#unknown{
-	
-}
-#twin{
-	background-color: #666666;
-	text-decoration: overline;
-}
-#Alex{
-	text-decoration: underline;
+.card {
+    box-shadow: 0px 4px 8px 0 #b3b3b3f5;
+    padding: 0 16px 0 16px;
 }
