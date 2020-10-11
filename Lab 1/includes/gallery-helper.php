@@ -1,11 +1,11 @@
 <?php 
 
-require 'includes/dbhandler.php';
+require 'dbhandler.php';
 define('MB', 1048576);
 
 if(isset($_POST['gallery-submit'])){
 
-    $file = $_FILES['gallery'];
+    $file = $_FILES['gallery-image'];
     $file_name = $file['name'];
     $file_tmp_name = $file['tmp_name'];
     $file_error = $file['error'];
@@ -34,7 +34,7 @@ if(isset($_POST['gallery-submit'])){
         $new_name = uniqid('', true).".".$ext;
         $destination = '../games/'.$new_name;
 
-        $sql = "INSERT INT games (title, descript, picpath) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO games (title, descript, picpath) VALUES (?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
